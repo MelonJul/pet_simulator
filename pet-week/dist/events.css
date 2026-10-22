@@ -1,0 +1,59 @@
+/* Full-screen, user-paced incident → readable educational cards. */
+.incident-image-overlay{padding:0;background:#d5bfaa;z-index:2000;overflow:hidden}
+.modal.incident-image-modal{position:fixed;inset:0;max-width:none;width:100vw;max-height:none;height:100dvh;margin:0;border:0;border-radius:0;background:radial-gradient(ellipse,#f6ead8,#b69c86);overflow:hidden;box-shadow:none}
+.incident-viewport{position:absolute;inset:0;display:grid;place-items:center}
+.incident-scene{position:relative;width:100%;aspect-ratio:3/2;background-image:var(--scene-atlas);background-size:200% 200%;background-position:var(--scene-x) var(--scene-y);overflow:hidden;isolation:isolate}
+.incident-viewport>.incident-scene{width:min(100vw,150dvh);flex-shrink:0}
+.incident-pet{position:absolute;display:block;aspect-ratio:3/4;transform:translate(-50%,-88%);z-index:2;filter:drop-shadow(0 8px 5px #604e3930);pointer-events:none}
+.incident-motion,.incident-facing,.incident-pose{position:absolute;inset:0;width:100%;height:100%;margin:0;display:block}
+.incident-facing{transform:scaleX(var(--acting-flip));transform-origin:50% 88%}
+.incident-cutout>span{position:absolute;display:block;background-repeat:no-repeat}
+.incident-pose{opacity:0}.incident-pose.pose-0{opacity:1;animation:incident-first 4s steps(1,end) forwards}.incident-pose.pose-1{animation:incident-second 4s steps(1,end) forwards}.incident-pose.pose-2{animation:incident-third 4s steps(1,end) forwards}.incident-pose.pose-still{opacity:1}
+.incident-motion{transform-origin:50% 88%;animation:incident-breathe 3.5s ease-in-out 4s infinite}
+.incident-character-name{position:absolute;top:91%;left:50%;transform:translateX(-50%);padding:4px 12px;border-radius:20px;color:#355747;background:#fff9eced;font-size:clamp(10px,1.4vw,17px);font-weight:800;white-space:nowrap;box-shadow:0 2px 9px #35250c15}
+.incident-reaction-cue{position:absolute;right:7%;top:14%;font:800 clamp(24px,5vw,58px)/1 Georgia,serif;color:#866336;text-shadow:2px 2px #fff9e5,-2px -2px #fff9e5;opacity:0;animation:incident-cue 4s ease-out forwards}
+@keyframes incident-first{0%,29%{opacity:1}30%,100%{opacity:0}}
+@keyframes incident-second{0%,29%{opacity:0}30%,84%{opacity:1}85%,100%{opacity:0}}
+@keyframes incident-third{0%,84%{opacity:0}85%,100%{opacity:1}}
+@keyframes incident-breathe{0%,100%{transform:scaleY(1)}50%{transform:scaleY(1.012)}}
+@keyframes incident-cue{0%,28%{opacity:0;transform:scale(.8) translateY(6px)}34%,63%{opacity:1;transform:scale(1) translateY(0)}100%{opacity:0;transform:translateY(-8px)}}
+.incident-live .motion-recoil{animation:incident-recoil 4s ease-in-out forwards,incident-breathe 3.5s ease-in-out 4s infinite}
+.incident-live .motion-scratch{animation:incident-scratch 4s ease-in-out forwards,incident-breathe 3.5s ease-in-out 4s infinite}
+.incident-live .motion-hide,.incident-live .motion-peek{animation:incident-peek 4s ease-in-out forwards,incident-breathe 3.5s ease-in-out 4s infinite}
+.incident-live .motion-sniff,.incident-live .motion-inspect,.incident-live .motion-nibble{animation:incident-sniff 4s ease-in-out forwards,incident-breathe 3.5s ease-in-out 4s infinite}
+.incident-live .motion-nestle{animation:incident-nestle 4s ease-in-out forwards,incident-breathe 3.5s ease-in-out 4s infinite}
+.incident-live .motion-wary,.incident-live .motion-listen{animation:incident-listen 4s ease-in-out forwards,incident-breathe 3.5s ease-in-out 4s infinite}
+.incident-live .motion-lean{animation:incident-lean 4s ease-in-out forwards,incident-breathe 3.5s ease-in-out 4s infinite}
+@keyframes incident-recoil{0%,22%,100%{transform:translateX(0) rotate(0)}28%{transform:translateX(calc(3% * var(--acting-scale))) rotate(2deg)}37%,54%{transform:translateX(calc(-5% * var(--acting-scale))) rotate(-5deg)}75%{transform:translateX(-2%) rotate(-1deg)}}
+@keyframes incident-scratch{0%,25%,100%{transform:translateY(0) rotate(0)}36%,60%{transform:translateY(calc(-2% * var(--acting-scale))) rotate(-2deg)}47%,72%{transform:translateY(1%) rotate(1deg)}}
+@keyframes incident-peek{0%,100%{transform:translateX(0)}30%,55%{transform:translateX(calc(-5% * var(--acting-scale))) scaleY(.97)}78%{transform:translateX(calc(2% * var(--acting-scale)))}}
+@keyframes incident-sniff{0%,25%,100%{transform:rotate(0)}38%,64%{transform:rotate(calc(3deg * var(--acting-scale))) translateX(1%)}51%,80%{transform:rotate(-1deg)}}
+@keyframes incident-nestle{0%,20%,100%{transform:scaleY(1)}35%,75%{transform:scaleY(.96) translateY(1%)}}
+@keyframes incident-listen{0%,20%,100%{transform:rotate(0)}36%,55%{transform:rotate(calc(-3deg * var(--acting-scale)))}72%{transform:rotate(2deg)}}
+@keyframes incident-lean{0%,100%{transform:translateX(0)}35%,65%{transform:translateX(calc(4% * var(--acting-scale))) rotate(3deg)}}
+.incident-thumbnail .incident-motion{animation:none}
+.incident-loading .incident-pose,.incident-loading .incident-motion,.incident-loading .incident-reaction-cue{animation-play-state:paused}
+.incident-loading::before,.incident-load-error::before{position:absolute;top:22px;left:22px;z-index:4;padding:10px 16px;border-radius:20px;background:#fff9ec;color:#355747;font-size:13px}
+.incident-loading::before{content:"장면 불러오는 중…"}.incident-load-error::before{content:"일부 그림을 불러오지 못했어요. 연결을 확인한 뒤 새로고침해 주세요."}
+.incident-scene[data-incident="catBox"]::after{content:"";position:absolute;inset:0;z-index:3;background-image:var(--scene-atlas);background-size:200% 200%;background-position:var(--scene-x) var(--scene-y);clip-path:polygon(48% 54%,88% 59%,88% 82%,47% 81%);pointer-events:none}
+.incident-image-heading{position:absolute;left:clamp(18px,4vw,64px);bottom:clamp(18px,3vh,36px);max-width:calc(100% - 36px);padding:14px 22px;border:1px solid #fff9;border-radius:20px;color:#294739;background:#fff9eced;box-shadow:0 8px 28px #553d2822;pointer-events:none}
+.incident-image-heading span{font-size:12px;letter-spacing:.13em;font-weight:700}
+.incident-image-heading h2{font-size:clamp(20px,3.2vw,38px);line-height:1.4;margin:7px 0 0;word-break:keep-all}
+.incident-close{position:absolute;right:clamp(16px,3vw,48px);top:clamp(20px,4vh,48px);padding:16px 22px;border:2px solid #fff;border-radius:100px;background:#294f40;color:white;font-weight:800;font-size:17px;box-shadow:0 4px 20px #271d2940;cursor:pointer;min-height:54px}
+.incident-close span{margin-left:9px}.incident-close:hover{background:#17392c}.incident-close:focus-visible{outline:4px solid #eeb75f;outline-offset:4px}
+.event-modal{width:min(940px,96vw)!important;max-width:940px!important}
+.incident-education{font-size:14px;line-height:1.8;color:#49544d}
+.incident-story-top{display:grid;grid-template-columns:210px 1fr;gap:24px;align-items:center;margin-bottom:24px}
+.incident-thumbnail{border-radius:18px;box-shadow:0 4px 16px #5b422116}
+.incident-story-top h2{font-size:25px;color:#294739;line-height:1.45;margin:8px 0 15px}
+.incident-lessons{display:grid;gap:12px}.incident-lesson{display:grid;grid-template-columns:40px 1fr;gap:15px;border:1px solid #e6dfd3;border-radius:18px;padding:22px;background:#fffdf8}
+.lesson-number{border-radius:13px;height:40px;background:#eaf0e7;color:#43654b;display:grid;place-items:center;font-size:21px;position:relative}.lesson-number small{position:absolute;top:43px;font-size:10px;letter-spacing:.1em;color:#9b9b87}
+.incident-lesson h3{color:#314b3b;font-size:17px;margin:0 0 9px}.incident-lesson p{margin:8px 0}.incident-lesson ul{padding-left:19px;margin:8px 0}.incident-lesson li+li{margin-top:7px}
+.incident-lesson details{padding:9px 12px;background:#f3f3e9;border-radius:10px;margin-top:14px}.incident-lesson summary,.incident-sources summary{cursor:pointer;color:#45684f;font-weight:700}.incident-lesson details small{color:#757971}
+.result-label{font-size:12px;color:#8c6949}.incident-resolved{border-top:1px dashed #cecdb7;margin-top:15px;padding-top:15px}.incident-followup{padding:12px;background:#f8eedb;border-radius:10px}
+.incident-urgent{padding:17px 20px;border-radius:15px;background:#fff0e8;border:1px solid #e5ac8d;color:#883f2d;margin-bottom:18px}.incident-urgent p{margin:4px 0 0}
+.incident-decisions{margin-top:26px;padding:22px;background:#eef2e9;border-radius:20px}.incident-decisions h3{margin:0 0 5px;color:#294739;font-size:18px}.incident-decisions>p{font-size:12px;margin:5px 0 16px}.incident-decisions .event-choices{margin:0;gap:10px}.incident-decisions .event-choice{background:#fffdf8;padding:17px;min-height:86px}.incident-decisions .event-choice b{font-size:15px}.incident-decisions .event-choice>span{font-size:12px;line-height:1.7}.incident-decisions .event-choice small{display:block;margin-top:4px;font-size:11px}
+.incident-sources{margin-top:18px;border-top:1px solid #ddd9cc;padding-top:17px;font-size:12px}.incident-sources a{display:block;margin:7px 0}.incident-education .event-links{display:flex;gap:20px;justify-content:space-between;flex-wrap:wrap;margin-top:22px}.journal-entry .event-replay-button{margin-top:12px}
+@media(max-width:600px){.incident-story-top{grid-template-columns:110px 1fr;gap:12px}.incident-story-top h2{font-size:19px}.incident-story-top .eyebrow{font-size:9px}.incident-story-top .pill{font-size:10px}.incident-image-heading{left:14px;top:90px;max-width:calc(100% - 28px);padding:12px 17px}.incident-image-heading span{font-size:10px}.incident-close{right:14px;top:18px;padding:12px 20px;font-size:15px}.incident-education{font-size:13px}.incident-lesson{padding:16px 12px;gap:10px;grid-template-columns:30px 1fr}.lesson-number{width:30px;height:30px;font-size:17px}.lesson-number small{top:33px}.incident-lesson h3{font-size:15px}.incident-decisions{padding:16px 12px}.incident-decisions .event-choice b{font-size:14px}.incident-decisions .event-choice>span{font-size:11px}}
+@media(max-width:600px){.incident-image-heading{top:auto;bottom:20px}.incident-viewport>.incident-scene{width:min(150vw,145dvh)}.incident-image-heading h2{font-size:21px}.incident-character-name{font-size:12px}.incident-reaction-cue{font-size:33px}}
+@media(prefers-reduced-motion:reduce){.incident-image-modal,.incident-pet,.incident-motion,.incident-pose,.incident-reaction-cue{animation:none!important;transition:none!important}.incident-pose.pose-0,.incident-pose.pose-1,.incident-reaction-cue{opacity:0}.incident-pose.pose-2,.incident-pose.pose-still{opacity:1}}

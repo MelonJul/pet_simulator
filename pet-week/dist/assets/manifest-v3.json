@@ -1,0 +1,187 @@
+{
+  "version": 3,
+  "mode": "built-in image_gen",
+  "created": "2026-10-21",
+  "grid": {
+    "columns": 4,
+    "rows": 2,
+    "width": 1536,
+    "height": 1024,
+    "cellWidth": 384,
+    "cellHeight": 512
+  },
+  "states": [
+    "calm",
+    "hungry",
+    "thirsty",
+    "playful",
+    "joyful",
+    "sleepy",
+    "anxious",
+    "uncomfortable"
+  ],
+  "validation": {
+    "dimensions": "All 17 outputs measured 1536 x 1024",
+    "alpha": "PNG alpha verified at (0,0); all corners sampled at alpha 0. Center grid intersection alpha 0 or 1.",
+    "visual": "Inspected all generated atlases. Eyes, ears, mouths, tails and body postures vary across eight states. Character identity and plush material retained.",
+    "note": "Generated atlas centering and padding are approximate; use fixed 4 x 2 cells and clip each cell. Some fur/tail edges reach close to cell boundaries."
+  },
+  "assets": [
+    {
+      "id": "dogSunny",
+      "name": "두부",
+      "species": "dog",
+      "description": "cream retriever with broad round floppy ears, a cream muzzle, sturdy adult build and a soft waving plume tail",
+      "file": "assets/dogSunny-states-v3.png",
+      "source": "C:\\Users\\SSAFY\\.codex\\generated_images\\01a15c95-6bf7-7841-95a5-386dbbaa7e19\\exec-7ffb5295-3d64-43ea-ba02-bb8b89da2000.png",
+      "reference": "C:\\Users\\SSAFY\\Desktop\\자율 프로젝트\\pet-week\\dist\\assets\\dog-v2.png"
+    },
+    {
+      "id": "dogCalm",
+      "name": "보리",
+      "species": "dog",
+      "description": "caramel and white short-legged adult dog, very long floppy ears, white face blaze, shy compact build",
+      "file": "assets/dogCalm-states-v3.png",
+      "source": "C:\\Users\\SSAFY\\.codex\\generated_images\\01a15c95-6bf7-7841-95a5-386dbbaa7e19\\exec-52898a82-dd3a-48a5-a5fd-945a3b7af8af.png",
+      "reference": "C:\\Users\\SSAFY\\Desktop\\자율 프로젝트\\pet-week\\dist\\assets\\dog-v2.png"
+    },
+    {
+      "id": "dogPuppy",
+      "name": "콩이",
+      "species": "dog",
+      "description": "small white puppy with asymmetrical warm-brown patches, one brown ear, big soft paws and a very round baby head",
+      "file": "assets/dogPuppy-states-v3.png",
+      "source": "C:\\Users\\SSAFY\\.codex\\generated_images\\01a15c95-6bf7-7841-95a5-386dbbaa7e19\\exec-17f7ba8f-92bc-4e2e-bca4-3d5ed4f097da.png",
+      "reference": "C:\\Users\\SSAFY\\Desktop\\자율 프로젝트\\pet-week\\dist\\assets\\dog-v2.png"
+    },
+    {
+      "id": "dogSenior",
+      "name": "밤이",
+      "species": "dog",
+      "description": "dark chocolate-brown senior dog, visibly silver-grey muzzle and eyebrow fur, gently drooping ears and a slightly stocky build",
+      "file": "assets/dogSenior-states-v3.png",
+      "source": "C:\\Users\\SSAFY\\.codex\\generated_images\\01a15c95-6bf7-7841-95a5-386dbbaa7e19\\exec-14454f99-6f98-4943-8294-3e3eb6ac8d6f.png",
+      "reference": "C:\\Users\\SSAFY\\Desktop\\자율 프로젝트\\pet-week\\dist\\assets\\dog-v2.png"
+    },
+    {
+      "id": "dogSensitive",
+      "name": "구름",
+      "species": "dog",
+      "description": "very fluffy white spitz dog with triangular upright ears, cloudlike round body and curled plume tail",
+      "file": "assets/dogSensitive-states-v3.png",
+      "source": "C:\\Users\\SSAFY\\.codex\\generated_images\\01a15c95-6bf7-7841-95a5-386dbbaa7e19\\exec-321a5660-4ff1-4a1e-8a94-4f5954805eed.png",
+      "reference": "C:\\Users\\SSAFY\\Desktop\\자율 프로젝트\\pet-week\\dist\\assets\\dog-v2.png"
+    },
+    {
+      "id": "dogIndependent",
+      "name": "탄이",
+      "species": "dog",
+      "description": "sleek black and tan pointed-ear dog with tan eyebrows and paws, pointed upright ears and a slender athletic adult body",
+      "file": "assets/dogIndependent-states-v3.png",
+      "source": "C:\\Users\\SSAFY\\.codex\\generated_images\\01a15c95-6bf7-7841-95a5-386dbbaa7e19\\exec-def726ad-02cf-420e-bbc1-d601973a7ef1.png",
+      "reference": "C:\\Users\\SSAFY\\Desktop\\자율 프로젝트\\pet-week\\dist\\assets\\dog-v2.png"
+    },
+    {
+      "id": "dogGentle",
+      "name": "호두",
+      "species": "dog",
+      "description": "beige shaggy senior dog, softly scruffy fluffy beard and eyebrows, floppy ears and broad gentle face",
+      "file": "assets/dogGentle-states-v3.png",
+      "source": "C:\\Users\\SSAFY\\.codex\\generated_images\\01a15c95-6bf7-7841-95a5-386dbbaa7e19\\exec-8b2173e2-3b2b-4f66-b18c-a0fb651036b1.png",
+      "reference": "C:\\Users\\SSAFY\\Desktop\\자율 프로젝트\\pet-week\\dist\\assets\\dog-v2.png"
+    },
+    {
+      "id": "dogSocial",
+      "name": "해리",
+      "species": "dog",
+      "description": "apricot poodle with tightly curled plush wool fur, fluffy round floppy ears and long slim legs",
+      "file": "assets/dogSocial-states-v3.png",
+      "source": "C:\\Users\\SSAFY\\.codex\\generated_images\\01a15c95-6bf7-7841-95a5-386dbbaa7e19\\exec-0e42c956-9bee-4416-b948-41efd060e49e.png",
+      "reference": "C:\\Users\\SSAFY\\Desktop\\자율 프로젝트\\pet-week\\dist\\assets\\dog-v2.png"
+    },
+    {
+      "id": "catCurious",
+      "name": "치즈",
+      "species": "cat",
+      "description": "orange and cream striped adult cat, cream muzzle and belly, clear darker orange forehead stripes and ringed tail",
+      "file": "assets/catCurious-states-v3.png",
+      "source": "C:\\Users\\SSAFY\\.codex\\generated_images\\01a15c95-6bf7-7841-95a5-386dbbaa7e19\\exec-ee4a67bc-2de4-4775-89e8-036334f2b62b.png",
+      "reference": "C:\\Users\\SSAFY\\Desktop\\자율 프로젝트\\pet-week\\dist\\assets\\cat-v2.png"
+    },
+    {
+      "id": "catShy",
+      "name": "모카",
+      "species": "cat",
+      "description": "white and warm brown patched adult cat, brown ears, brown forehead stripes, white muzzle, softly round cheeks and ringed brown tail",
+      "file": "assets/catShy-states-v3.png",
+      "source": "C:\\Users\\SSAFY\\.codex\\generated_images\\01a15c95-6bf7-7841-95a5-386dbbaa7e19\\exec-10cc70b7-ab5f-490d-bd43-1fc056eca272.png",
+      "reference": "C:\\Users\\SSAFY\\Desktop\\자율 프로젝트\\pet-week\\dist\\assets\\cat-v2.png"
+    },
+    {
+      "id": "catKitten",
+      "name": "나비",
+      "species": "cat",
+      "description": "small calico kitten, white base with orange and black patches, oversized triangular ears and little stubby kitten paws",
+      "file": "assets/catKitten-states-v3.png",
+      "source": "C:\\Users\\SSAFY\\.codex\\generated_images\\01a15c95-6bf7-7841-95a5-386dbbaa7e19\\exec-4c0aaba3-f4b7-4d6b-ad36-d011d3a5c97f.png",
+      "reference": "C:\\Users\\SSAFY\\Desktop\\자율 프로젝트\\pet-week\\dist\\assets\\cat-v2.png"
+    },
+    {
+      "id": "catSenior",
+      "name": "단추",
+      "species": "cat",
+      "description": "grey and white senior cat, silver muzzle and eyebrows, white chest and paws, rounded grey ears and stocky gentle body",
+      "file": "assets/catSenior-states-v3.png",
+      "source": "C:\\Users\\SSAFY\\.codex\\generated_images\\01a15c95-6bf7-7841-95a5-386dbbaa7e19\\exec-19badeb2-c1b1-46fa-935d-3e365826d3a5.png",
+      "reference": "C:\\Users\\SSAFY\\Desktop\\자율 프로젝트\\pet-week\\dist\\assets\\cat-v2.png"
+    },
+    {
+      "id": "catIndependent",
+      "name": "루나",
+      "species": "cat",
+      "description": "sleek black adult cat with subtly charcoal muzzle, pointed triangular ears, long slender tail and slim elegant build",
+      "file": "assets/catIndependent-states-v3.png",
+      "source": "C:\\Users\\SSAFY\\.codex\\generated_images\\01a15c95-6bf7-7841-95a5-386dbbaa7e19\\exec-0d88fed0-f007-4d39-b197-c16c478ab4a5.png",
+      "reference": "C:\\Users\\SSAFY\\Desktop\\자율 프로젝트\\pet-week\\dist\\assets\\cat-v2.png"
+    },
+    {
+      "id": "catSocial",
+      "name": "솜이",
+      "species": "cat",
+      "description": "extremely fluffy white adult cat with pink inner ears, round cloudlike cheeks, small pink nose and enormous fluffy plume tail",
+      "file": "assets/catSocial-states-v3.png",
+      "source": "C:\\Users\\SSAFY\\.codex\\generated_images\\01a15c95-6bf7-7841-95a5-386dbbaa7e19\\exec-7e2a6aa5-9125-4766-a83e-21768544e3d5.png",
+      "reference": "C:\\Users\\SSAFY\\Desktop\\자율 프로젝트\\pet-week\\dist\\assets\\cat-v2.png"
+    },
+    {
+      "id": "catSensitive",
+      "name": "미루",
+      "species": "cat",
+      "description": "blue-grey shorthair adult cat with rounded triangular upright ears, smooth dense felt coat, silvery muzzle and slim tail",
+      "file": "assets/catSensitive-states-v3.png",
+      "source": "C:\\Users\\SSAFY\\.codex\\generated_images\\01a15c95-6bf7-7841-95a5-386dbbaa7e19\\exec-816f004b-5ede-4e85-bc7c-a74db67c6689.png",
+      "reference": "C:\\Users\\SSAFY\\Desktop\\자율 프로젝트\\pet-week\\dist\\assets\\cat-v2.png"
+    },
+    {
+      "id": "catQuiet",
+      "name": "율무",
+      "species": "cat",
+      "description": "cream adult cat with dark cocoa-brown pointed ears, cocoa brown paws and tail, small rounded face and pale ivory chest",
+      "file": "assets/catQuiet-states-v3.png",
+      "source": "C:\\Users\\SSAFY\\.codex\\generated_images\\01a15c95-6bf7-7841-95a5-386dbbaa7e19\\exec-f267c14d-4d34-4e0b-a648-6eaaf369fbfe.png",
+      "reference": "C:\\Users\\SSAFY\\Desktop\\자율 프로젝트\\pet-week\\dist\\assets\\cat-v2.png"
+    },
+    {
+      "id": "catDudung",
+      "name": "두둥이",
+      "species": "cat",
+      "breed": "코리안 숏헤어",
+      "ageYears": 6,
+      "description": "Dark gray-brown mackerel tabby, yellow-green eyes, upright ears and cream chin, based on user photos; eight plush expression poses.",
+      "file": "assets/catDudung-states-v3.png",
+      "source": "C:/Users/SSAFY/.codex/generated_images/01a15bf4-eac8-72c3-9545-5e21c463fc9f/exec-a5e85fe5-78e2-44cd-bc22-2211a48ed687.png",
+      "reference": "User-provided Dudung cat photos and catShy-states-v3.png style reference",
+      "promptRecord": "ASSET-PROMPT-DUDUNG.md"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+Dog image: dog.jpg
+Title: Golden retriever close happy
+Creator: Jina Lee
+Source: https://commons.wikimedia.org/wiki/File:Golden_retriever_close_happy.jpg
+Download: https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Golden_retriever_close_happy.jpg/960px-Golden_retriever_close_happy.jpg
+License: Creative Commons Attribution-ShareAlike 3.0 Unported
+License URL: https://creativecommons.org/licenses/by-sa/3.0/
+Changes: Wikimedia 960px thumbnail. Displayed using CSS object-fit cropping and motion; no file edits. This image and image adaptations retain CC BY-SA 3.0.
+
+Cat image: cat.jpg
+Title: European shorthair portrait 2 Quincy
+Creator: Fleshgrinder
+Source: https://commons.wikimedia.org/wiki/File:European_shorthair_portrait_2_Quincy.jpg
+Download: https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/European_shorthair_portrait_2_Quincy.jpg/960px-European_shorthair_portrait_2_Quincy.jpg
+License: Public domain, released worldwide by author.
+Changes: Wikimedia 960px thumbnail. Displayed using CSS object-fit cropping; no file edits.
+
+Downloaded and verified on 2026-10-21. Profile names and personality descriptions are fictional and do not describe the photographed animals.

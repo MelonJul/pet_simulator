@@ -1,0 +1,7 @@
+{
+  "name": "first-together-pet-week",
+  "version": "4.0.0",
+  "private": true,
+  "description": "A browser-local seven-day pet care simulation in Korean",
+  "scripts": {"start": "node preview.mjs", "test": "node --test tests/engine.test.cjs tests/ui-flow.test.cjs tests/assets.test.cjs tests/events.test.cjs tests/event-actors.test.cjs tests/status-pricing.test.cjs tests/runtime.test.cjs tests/motions.test.cjs"}
+}
